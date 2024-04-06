@@ -19,19 +19,22 @@
 </template>
 
 <style lang="scss">
+    @import '../assets/styles/variaveis.scss';
+
     .header {
-        padding: 20px 0px;
+        padding: 24px 0px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         &__logo {
-            width: 120px;
+            width: 112px;
         }
 
         &__title {
             text-transform: uppercase;
             letter-spacing: 6px;
+            color: $colorMain;
             font-weight: bold;
         }
 
@@ -39,7 +42,7 @@
             display: flex;
 
             &__item {
-                margin-left: 15px;
+                margin-left: 14px;
                 cursor: pointer;
             }
         }
