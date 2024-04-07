@@ -21,7 +21,8 @@
 
 <style lang="scss">
     .releases {
-        
+        margin-bottom: 60px;
+
         &__title {
             font-size: 48px;
             font-weight: 900;

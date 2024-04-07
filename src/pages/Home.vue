@@ -3,6 +3,7 @@
     import MembersInfos from '@/components/MembersInfos.vue';
     import Hero from '@/components/Hero.vue';
     import Releases from '@/components/Releases.vue';
+    import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
@@ -12,4 +13,5 @@
         <Hero />
         <Releases />
     </div>
+    <Footer />
 </template>
