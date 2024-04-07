@@ -5,8 +5,18 @@ $fontPrincipal: "Inter", sans-serif;
 $colorMain: #151414;
 $colorSecondary: #fff;
 $colorTertiary: #ccc;
+$colorQuaternary: #666;
+$colorCard: #f5f5f5;
 
 //colors gradient
 $colorGradientOne: #cf26d3;
 $colorGradientTwo: #f2d06c;
 $colorGradientThree: #f1bb13;
+
+//mixins
+@mixin btn($fontSize) {
+    background-color: $colorMain;
+    color: $colorSecondary;
+    font-weight: 900;
+    font-size: $fontSize;
+}

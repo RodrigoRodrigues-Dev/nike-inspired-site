@@ -2,14 +2,14 @@
     import Header from '../components/Header.vue';
     import MembersInfos from '@/components/MembersInfos.vue';
     import Hero from '@/components/Hero.vue';
+    import Releases from '@/components/Releases.vue';
 </script>
 
 <template>
-    <div class="container">
-        <Header />
-    </div>
+    <Header />
     <MembersInfos />
     <div class="container">
         <Hero />
+        <Releases />
     </div>
 </template>

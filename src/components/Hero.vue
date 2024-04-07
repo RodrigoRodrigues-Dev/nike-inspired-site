@@ -24,7 +24,7 @@
             position: relative;
             overflow: hidden;
             height: 900px;
-            margin-bottom: 24px;
+            margin-bottom: 48px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,16 +99,16 @@
                 }
 
                 &__button {
-                    font-size: 20px;
-                    font-weight: 900;
-                    color: $colorSecondary;
+                    @include btn(15px);
                     padding: 10px 30px;
                     border-radius: 50px;
                     border: none;
                     background-color: $colorMain;
+                    width: 100%;
 
                     &:hover {
                         cursor: pointer;
+                        background-color: lighten($colorMain, 12%)
                     }
                 }
             }
