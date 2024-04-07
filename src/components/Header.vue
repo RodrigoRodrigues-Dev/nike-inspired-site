@@ -34,7 +34,6 @@
         &__title {
             text-transform: uppercase;
             letter-spacing: 6px;
-            color: $colorMain;
             font-weight: bold;
         }
 
@@ -43,7 +42,10 @@
 
             &__item {
                 margin-left: 14px;
-                cursor: pointer;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

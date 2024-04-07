@@ -1,6 +1,7 @@
 <script setup>
     import Header from '../components/Header.vue';
     import MembersInfos from '@/components/MembersInfos.vue';
+    import Hero from '@/components/Hero.vue';
 </script>
 
 <template>
@@ -9,13 +10,6 @@
     </div>
     <MembersInfos />
     <div class="container">
-        <Hover />
+        <Hero />
     </div>
 </template>
-
-<style lang="scss">
-    .container {
-        max-width: 1200px;
-        margin: auto;
-    }
-</style>

@@ -16,6 +16,7 @@
         width: 100%;
         padding: 16px 0px;
         color: $colorSecondary;
+        margin-bottom: 24px;
 
         &__message {
             font-size: 12px;
