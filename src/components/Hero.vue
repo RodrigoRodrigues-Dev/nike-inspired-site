@@ -29,6 +29,12 @@
             justify-content: center;
             align-items: center;
 
+            //Disables text selection
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE 10+/Edge */
+            user-select: none; /* Standard */
+
             &::before {
                 content: '';
                 height: 100%;

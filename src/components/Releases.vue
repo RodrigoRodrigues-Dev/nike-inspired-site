@@ -6,15 +6,12 @@
     <div class="releases">
         <h2 class="releases__title">Lançamentos</h2>
         <div class="releases__cards">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Card
+                img="/src/assets/images/nike-lunarlon.png"
+                title="Nike Lunarlon"
+                type="Corrida"
+                price="R$ 599,90"
+            />
         </div>
     </div>
 </template>
