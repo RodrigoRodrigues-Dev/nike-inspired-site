@@ -1,7 +1,7 @@
 <template>
     <header class="header">
         <div class="container">
-                <img class="header__logo" src="../assets/images/nike-logo.png" alt="">
+            <img class="header__logo" src="@/assets/images/nike-logo.png" alt="Logo da Nike">
             <h3 class="header__title">
                 just do it
             </h3>

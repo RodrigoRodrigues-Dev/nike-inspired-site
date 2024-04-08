@@ -5,7 +5,7 @@
         img: String,
         title: String,
         type: String,
-        price: Number
+        price: String
     })
 
     const isLiked = ref(false);
@@ -22,7 +22,7 @@
             <img class="card__images__image" :src="img" alt="">
         </div>
         <div class="card__description">
-            <h2>{{ title }}</h2>
+            <h2 class="card__description__title">{{ title }}</h2>
             <span class="card__description__type">{{ type }}</span>
             <strong class="card__description__price">{{ price }}</strong>
             <button class="card__description__btn">Adicionar ao carrinho</button>
@@ -72,6 +72,10 @@
             flex-direction: column;
             row-gap: 5px;
             width: 100%;
+
+            &__title {
+                font-size: 20px;
+            }
 
             &__type {
                color: $colorQuaternary;

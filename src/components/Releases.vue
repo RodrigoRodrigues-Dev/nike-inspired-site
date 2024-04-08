@@ -1,16 +1,31 @@
 <script setup>
-    import Card from './Card.vue'; 
+    import { onMounted, ref } from 'vue';
+    import Card from './Card.vue';
+    import axios from 'axios';
+
+    const items = ref([]);
+
+    onMounted(async () => {
+        try {
+            const { data } = await axios.get('https://82063bb80a3f0270.mokky.dev/items');
+            items.value = data;
+        } catch(err) {
+            console.log(err)
+        }
+    })
 </script>
 
 <template>
     <div class="releases">
         <h2 class="releases__title">Lançamentos</h2>
         <div class="releases__cards">
-            <Card
-                img="/src/assets/images/nike-lunarlon.png"
-                title="Nike Lunarlon"
-                type="Corrida"
-                price="R$ 599,90"
+            <Card 
+            v-for="item in items" 
+            :key="item.id"
+            :img="item.imgURL"
+            :title="item.title"
+            :price="item.price"
+            :type="item.type"
             />
         </div>
     </div>
