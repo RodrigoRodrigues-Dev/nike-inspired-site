@@ -5,7 +5,8 @@
         img: String,
         title: String,
         type: String,
-        price: String
+        price: String,
+        isFavorite: Boolean
     })
 
     const isLiked = ref(false);
@@ -56,6 +57,7 @@
                 top: 0;
                 left: 0;
                 margin: 30px;
+                width: 30px;
 
                 &:hover {
                     cursor: pointer;
