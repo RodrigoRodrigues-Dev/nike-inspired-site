@@ -2,11 +2,11 @@
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__container__content">
-                <a>Encontre Uma Loja Nike</a>
-                <a>Cadastre-se para receber novidades</a>
-                <a>Cartão Presente</a>
-                <a>Mapa do Site</a>
-                <a>Nike Journal</a>
+                <span> <a href="#">Encontre Uma Loja Nike</a> </span>
+                <span> <a href="#">Cadastre-se para receber novidades</a> </span>
+                <span> <a href="#">Cartão Presente</a> </span>
+                <span> <a href="#">Mapa do Site</a> </span>
+                <span> <a href="#">Nike Journal</a> </span>
             </div>
             <div class="footer__container__content">
                 <p>Ajuda</p>
@@ -62,9 +62,12 @@
             justify-content: space-between;
 
             &__content {
-                p {
-                    font-size: 18px;
-                    margin-bottom: 12px;
+                span {
+                    a {
+                        color: $colorSecondary;
+                        font-size: 18px;
+                        margin-bottom: 12px;
+                    }
                 }
                 li {
                     font-size: 16px;
