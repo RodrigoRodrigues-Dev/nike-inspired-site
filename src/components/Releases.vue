@@ -48,7 +48,7 @@
     }
 };
 
-    onMounted(fetchItems)
+    onMounted(fetchItems);
     watch(filters, fetchItems);
     
     const formatPrice = (price) => {
@@ -118,7 +118,6 @@
             margin: 0 50px;
             font-size: 20px;
             background-color: $colorSearch;
-            outline: none;
             border: none;
             border-radius: 30px;
 
@@ -126,7 +125,7 @@
                 background-color: darken($colorSearch, 8%);
             }
             &:focus {
-                background-color: darken($colorSearch, 8%);  
+                background-color: lighten($colorSearch, 8%);  
             }
         }
 

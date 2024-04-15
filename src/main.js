@@ -1,6 +1,23 @@
 import './assets/styles/main.scss'
 
 import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import Home from './pages/Home.vue'
+import Drawer from './pages/Drawer.vue'
+
+const app = createApp(App)
+
+const routes = [
+    { path: '/', name: 'Home', component: Home },
+    { path: '/drawer', name: 'Drawer', component: Drawer },
+]  
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
+
+app.use(router)
+app.mount('#app')

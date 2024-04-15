@@ -27,7 +27,6 @@
         position: sticky;
         top: 0;
         left: 0;
-        width: 100%;
         background-color: #fff;
         padding: 24px 0px;
         z-index: 999;

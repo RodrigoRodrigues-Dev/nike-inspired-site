@@ -57,6 +57,7 @@
 
         &__container {
             max-width: 1200px;
+            width: 100%;
             margin: auto;
             display: flex;
             justify-content: space-between;
