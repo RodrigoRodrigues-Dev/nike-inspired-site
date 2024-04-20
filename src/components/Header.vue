@@ -1,7 +1,13 @@
+<script setup>
+    import { RouterLink } from 'vue-router';
+</script>
+
 <template>
     <header class="header">
         <div class="container">
-            <img class="header__logo" src="@/assets/images/nike-logo.png" alt="Logo da Nike">
+            <RouterLink to="/">
+                <img class="header__logo" src="@/assets/images/nike-logo.png" alt="Logo da Nike">
+            </RouterLink>
             <h3 class="header__title">
                 just do it
             </h3>
@@ -13,7 +19,9 @@
                     <img src="../assets/images/icons/Favorite-icon.svg" alt="">
                 </li>
                 <li class="header__iconMenu__item">
-                    <img src="../assets/images/icons/Cart-icon.svg" alt="">
+                    <RouterLink to="/Drawer">
+                        <img src="../assets/images/icons/Cart-icon.svg" alt="">
+                    </RouterLink>
                 </li>
             </ul>
         </div>
