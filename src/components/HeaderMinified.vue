@@ -1,5 +1,7 @@
+<script setup>
+    import { RouterLink } from 'vue-router';
+</script>
 
-import { RouterLink } from 'vue-router';
 <template>
     <header class="headerMin">
         <RouterLink to="/">
@@ -17,7 +19,7 @@ import { RouterLink } from 'vue-router';
         margin-bottom: 2em;
 
         img {
-            width: 96px;
+            width: 6em;
         }
     }
 </style>

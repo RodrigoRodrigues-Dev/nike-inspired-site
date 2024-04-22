@@ -13,6 +13,7 @@
     .cartItem {
         height: 5em;
         padding: 2em;
+        width: 100%;
         background-color: $colorCard;
         border-radius: 2em;
         display: flex;
