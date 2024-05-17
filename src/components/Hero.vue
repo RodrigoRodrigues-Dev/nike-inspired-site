@@ -111,11 +111,6 @@
                     border: none;
                     background-color: $colorMain;
                     width: 100%;
-
-                    &:hover {
-                        cursor: pointer;
-                        background-color: lighten($colorMain, 12%)
-                    }
                 }
             }
         }

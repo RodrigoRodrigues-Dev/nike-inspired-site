@@ -20,4 +20,9 @@ $colorGradientThree: #f1bb13;
     color: $colorSecondary;
     font-weight: 900;
     font-size: $fontSize;
+
+    &:hover {
+        cursor: pointer;
+        background-color: lighten($colorMain, 12%)
+    }
 }

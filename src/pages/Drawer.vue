@@ -1,6 +1,6 @@
 <script setup>
-import HeaderMinified from '@/components/HeaderMinified.vue';
-import CartItem from '@/components/CartItem.vue';
+    import HeaderMinified from '@/components/HeaderMinified.vue';
+    import CartItem from '@/components/CartItem.vue';
 </script>
 
 <template>
@@ -9,6 +9,7 @@ import CartItem from '@/components/CartItem.vue';
         <div class="cart-container">
             <div class="cartList">
                 <CartItem />
+
             </div>
             <div class="subtotal">
                 <span class="subtotal__label">Subtotal: </span>
@@ -33,6 +34,7 @@ import CartItem from '@/components/CartItem.vue';
                     <span class="resume__item-value">R$ 599,99</span>
                 </div>
             </div>
+            <button class="cart-button">Finalizar Compra</button>
         </div>
         <footer class="footerMin">
             <div class="footer-container">
@@ -63,10 +65,6 @@ import CartItem from '@/components/CartItem.vue';
 
 <style lang="scss">
     @import '/src/assets/styles/_variaveis.scss';
-
-    body {
-        height: 100vh;
-    }
 
     .drawer-container {
         position: relative;
@@ -124,6 +122,14 @@ import CartItem from '@/components/CartItem.vue';
             margin-bottom: 1em;
             border-bottom: 2px solid #ccc;
         }
+    }
+
+    .cart-button {
+        @include btn(1em);
+        width: 70%;
+        padding: 1em;
+        border-radius: 1em;
+        cursor: pointer;
     }
 
     .footerMin {

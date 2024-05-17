@@ -6,7 +6,7 @@
         title: String,
         type: String,
         price: String,
-        isFavorite: Boolean
+        onClickAdd: Function
     })
 
     const isLiked = ref(false);
@@ -26,7 +26,7 @@
             <h2 class="card__description__title">{{ title }}</h2>
             <span class="card__description__type">{{ type }}</span>
             <strong class="card__description__price">{{ price }}</strong>
-            <button class="card__description__btn">Adicionar ao carrinho</button>
+            <button class="card__description__btn" @click="onClickAdd">Adicionar ao carrinho</button>   
         </div>
     </div>
 </template>
@@ -84,20 +84,15 @@
             }
             
             &__price {
-                font-size: 20px;
+                font-size: 1.1em;
             }
 
             &__btn {
-                @include btn(15px);
+                @include btn(1em);
                 border: none;
-                border-radius: 14px;
-                padding: 15px 0px;
-                margin-top: 12px;
-                
-                &:hover {
-                    cursor: pointer;
-                    background-color: lighten($colorMain, 12%)
-                }
+                border-radius: 1em;
+                padding: 1em 0px;
+                margin-top: 0.8em;
             }
         }
     }

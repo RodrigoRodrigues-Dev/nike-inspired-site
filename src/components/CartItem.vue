@@ -1,8 +1,16 @@
+<script setup>
+    defineProps({
+        title: String,
+        price: Number,
+        img: String
+    })
+</script>
+
 <template>
     <div class="cartItem">
-        <img class="cartItem__image" src="/src/assets/images/nike-lunarlon.png" alt="">
-        <h2>Nike Lunarlon</h2>
-        <span class="cartItem__price">R$ 599,00</span>
+        <img class="cartItem__image" :src="img" alt="">
+        <h2>{{ title }}</h2>
+        <span class="cartItem__price">{{ price }}</span>
         <img class="cartItem__del" src="/src/assets/images/icons/x.svg">
     </div>
 </template>
@@ -13,13 +21,12 @@
     .cartItem {
         height: 5em;
         padding: 2em;
-        width: 100%;
-        background-color: $colorCard;
+        margin-bottom: 2em;
         border-radius: 2em;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 2em;
+        background-color: $colorCard;
 
         &__image {
             width: 7em;

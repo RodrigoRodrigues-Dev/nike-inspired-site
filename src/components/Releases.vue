@@ -1,7 +1,7 @@
 <script setup>
     import { onMounted, ref, reactive, watch } from 'vue';
-    import Card from './Card.vue';
     import axios from 'axios';
+    import CartList from './ProductList.vue';
 
     const items = ref([]);
 
@@ -15,47 +15,44 @@
     const searchQuery = ref('');
 
     const onChangeSelect = event => {
-        filters.sortBy = event.target.value
-    }
+        filters.sortBy = event.target.value;
+    };
 
     const onChangeTypeSelect = event => {
         filters.type = event.target.value;
     };
 
     const onChangeSearchInput = event => {
-        filters.searchQuery = event.target.value
-    }
+        filters.searchQuery = event.target.value;
+    };
 
     const fetchItems = async () => {
-    try {
+        try {
         const params = {
             sortBy: filters.sortBy,
         };
 
         if (filters.searchQuery) {
             params.title = `*${filters.searchQuery}*`;
-        }
+        };
 
         if (filters.type) {
             params.type = `*${filters.type}*`;
-        }
+        };
 
         const { data } = await axios.get(`https://82063bb80a3f0270.mokky.dev/items`, {params});
         
         items.value = data;
-    } catch (err) {
+        } catch (err) {
         console.log(err);
-    }
-};
+        }
+    };
 
-    onMounted(fetchItems);
+    onMounted(async () => {
+        await fetchItems();
+    });
+
     watch(filters, fetchItems);
-    
-    const formatPrice = (price) => {
-      const parts = price.toString().split(".");
-      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-      return `R$ ${parts.join(",")},00`;
-    }
 </script>
 
 <template>
@@ -79,17 +76,7 @@
                 </select>
             </div>
         </div>
-        <div class="releases__cards">
-            <Card 
-                v-for="item in items" 
-                :key="item.id"
-                :img="item.imgURL"
-                :title="item.title"
-                :price="formatPrice(item.price)"
-                :type="item.type"
-                isFavorite=""
-            />
-        </div>
+        <CartList :items="items"/>
     </div>
 </template>
 
@@ -143,13 +130,6 @@
                     cursor: pointer;
                 }
             }
-        }
-
-        &__cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            column-gap: 10px;
-            row-gap: 16px;
         }
     }
 </style>
