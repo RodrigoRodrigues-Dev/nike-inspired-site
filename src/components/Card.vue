@@ -65,7 +65,7 @@
             }
 
             &__image {
-                width: 210px;
+                width: 13em;
             }
         }
 

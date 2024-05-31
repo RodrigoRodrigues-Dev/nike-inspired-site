@@ -1,7 +1,7 @@
 <template>
     <div class="membersInfos">
         <h3 class="membersInfos__message">
-            Membros: Frete grátis para pedidos acima de R$ 300,00
+            Frete gratis e todas as compras com 10% de desconto
         </h3>
     </div>
 </template>
@@ -19,7 +19,7 @@
         margin-bottom: 24px;
 
         &__message {
-            font-size: 12px;
+            font-size: 0.8em;
         }
     }
 </style>

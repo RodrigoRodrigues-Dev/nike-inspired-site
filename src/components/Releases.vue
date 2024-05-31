@@ -1,9 +1,19 @@
 <script setup>
-    import { onMounted, ref, reactive, watch } from 'vue';
+    import { onMounted, ref, reactive, watch, inject } from 'vue';
     import axios from 'axios';
     import CartList from './ProductList.vue';
 
+    const { addToCart, removeFromCart } = inject('cart')
+
     const items = ref([]);
+
+    const onClickAddPlus = (item) => {
+        if (!item.isAdded) {
+            addToCart(item)
+        } else {
+            removeFromCart(item)
+        }
+    }
 
     const filters = reactive({
         sortBy: '',
@@ -42,7 +52,10 @@
 
         const { data } = await axios.get(`https://82063bb80a3f0270.mokky.dev/items`, {params});
         
-        items.value = data;
+        items.value = data.map((obj) => ({
+            ...obj,
+            isAdded: false,
+        }));
         } catch (err) {
         console.log(err);
         }
@@ -76,7 +89,7 @@
                 </select>
             </div>
         </div>
-        <CartList :items="items"/>
+        <CartList :items="items" @add-to-cart="onClickAddPlus"/>
     </div>
 </template>
 
