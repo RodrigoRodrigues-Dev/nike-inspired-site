@@ -1,7 +1,7 @@
 <script setup>
     import { onMounted, ref, reactive, watch, inject } from 'vue';
     import axios from 'axios';
-    import CartList from './ProductList.vue';
+    import ProductList from './ProductList.vue';
 
     const { addToCart, removeFromCart } = inject('cart')
 
@@ -89,7 +89,7 @@
                 </select>
             </div>
         </div>
-        <CartList :items="items" @add-to-cart="onClickAddPlus"/>
+        <ProductList :items="items" @add-to-cart="onClickAddPlus"/>
     </div>
 </template>
 

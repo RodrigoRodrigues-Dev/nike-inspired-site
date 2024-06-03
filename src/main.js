@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import Home from './pages/Home.vue'
 import Drawer from './pages/Drawer.vue'
+import Favorites from './pages/Favorites.vue'
 
 // Criação da aplicação Vue
 const app = createApp(App)
@@ -19,6 +20,12 @@ const routes = [
         component: Drawer,
         meta: { title: 'Meu Carrinho - Nike' }
     },
+    { 
+      path: '/Favorites', 
+      name: 'Favorites', 
+      component: Favorites,
+      meta: { title: 'Favoritos - nike' }
+  },
 ]
 
 // Criação do router

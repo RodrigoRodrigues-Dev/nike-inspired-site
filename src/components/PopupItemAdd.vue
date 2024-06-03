@@ -36,8 +36,8 @@
     .popupItem {
         position: fixed;
         z-index: 9999;
-        top: 100px;
-        right: 10px;
+        top: 110px;
+        right: 15px;
         height: 250px;
         width: 400px;
         display: flex;

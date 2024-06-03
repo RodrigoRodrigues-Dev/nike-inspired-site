@@ -12,7 +12,7 @@
         <div class="hero__productDetails">
             <span class="hero__productDetails__description">O Tênis Nike Lunarlon oferece conforto, estilo e desempenho excepcionais. Com sua parte superior respirável e amortecimento responsivo na entressola, é a escolha ideal para corredores que buscam qualidade e sofisticação em um só produto.</span>
             <strong class="hero__productDetails__price">R$ 599,90</strong>
-            <button class="hero__productDetails__button">Adicionar ao carrinho</button>
+            <button class="hero__productDetails__button">Indisponivel</button>
         </div>
     </div>
 </template>

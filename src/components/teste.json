@@ -1,0 +1,110 @@
+[
+    {
+        "id": "1",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Air Jordan XI",
+        "type": "Basquete",
+        "price": 899,
+        "imgURL": "https://i.imgur.com/bAc5DtG.png"
+    },
+    {
+        "id": "2",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Air Max 180 Ultramarine",
+        "type": "Treino & Academia",
+        "price": 699,
+        "imgURL": "https://i.imgur.com/gVJXmwy.png"
+    },
+    {
+        "id": "3",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Lupinek Flyknit",
+        "type": "Basquete",
+        "price": 799,
+        "imgURL": "https://i.imgur.com/INvQKdL.png"
+    },
+    {
+        "id": "4",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Train Quick Mens",
+        "type": "Corrida & Academia",
+        "price": 499,
+        "imgURL": "https://i.imgur.com/JTjtizI.png"
+    },
+    {
+        "id": "5",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Air Force Supreme x Nike SB",
+        "type": "Casual",
+        "price": 12999,
+        "imgURL": "https://i.imgur.com/XClNY7s.png"
+    },
+    {
+        "id": "6",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike LeBron 14",
+        "type": "Basquete",
+        "price": 2500,
+        "imgURL": "https://i.imgur.com/tukAdyU.png"
+    },
+    {
+        "id": "7",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Air Max 2017 (Red-White)",
+        "type": "Corrida",
+        "price": 499,
+        "imgURL": "https://i.imgur.com/OFsJn2l.png"
+    },
+    {
+        "id": "8",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Air Jordan V",
+        "type": "Basquete",
+        "price": 1299,
+        "imgURL": "https://i.imgur.com/ZKthKhA.png"
+    },
+    {
+        "id": "9",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Air Huarache Run Ultra",
+        "type": "Corrida & Treino",
+        "price": 750,
+        "imgURL": "https://i.imgur.com/plz1rjD.png"
+    },
+    {
+        "id": "10",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Air Force 1 (White/Blue)",
+        "type": "Casual",
+        "price": 1399,
+        "imgURL": "https://i.imgur.com/ZSsScVm.png"
+    },
+    {
+        "id": "11",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Air Jordan 1 Retro High (GS)",
+        "type": "Basquete",
+        "price": 899,
+        "imgURL": "https://i.imgur.com/EpPendS.png"
+    },
+    {
+        "id": "12",
+        "isFavorite": false,
+        "isAdded": false,
+        "title": "Nike Dunk (Green)",
+        "type": "Casual",
+        "price": 899,
+        "imgURL": "https://i.imgur.com/d50mFR4.png"
+    }
+]

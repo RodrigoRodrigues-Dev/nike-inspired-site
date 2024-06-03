@@ -15,7 +15,7 @@
 
     .headerMin {
         background-color: $colorCard;
-        padding: 2.5em;
+        padding: 2em;
         margin-bottom: 2em;
 
         img {

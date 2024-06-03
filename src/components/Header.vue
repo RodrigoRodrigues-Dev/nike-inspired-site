@@ -16,7 +16,9 @@
                     <img src="../assets/images/icons/User-icon.svg" alt="">
                 </li>
                 <li class="header__iconMenu__item">
-                    <img src="../assets/images/icons/Favorite-icon.svg" alt="">
+                    <RouterLink to="/Favorites">
+                        <img src="../assets/images/icons/Favorite-icon.svg" alt="">
+                    </RouterLink>
                 </li>
                 <li class="header__iconMenu__item">
                     <RouterLink to="/Drawer">
