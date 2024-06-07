@@ -7,12 +7,6 @@ import { RouterLink } from 'vue-router';
 
 const { totalPrice, cart, clearCart } = inject('cart');
 
-const formatPrice = (price) => {
-    const parts = price.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return `R$ ${parts.join(",")}`;
-};
-
 function aplicarDesconto(valor) {
     const desconto = valor * 0.10;
     const valorComDesconto = valor - desconto;
@@ -27,6 +21,12 @@ function finalizarCompra() {
 
     clearCart();
 }
+
+const formatPrice = (price) => {
+    const parts = price.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return `R$ ${parts.join(",")}`;
+};
 </script>
 
 <template>
@@ -124,11 +124,12 @@ function finalizarCompra() {
         align-items: center;
 
         &__container {
-            &__details {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
+            &__details {
                 img {
                     height: 2.8em;
                     margin-right: 1em
@@ -137,7 +138,7 @@ function finalizarCompra() {
 
             &__btn {
                 @include btn(1em);
-                width: 100%;
+                width: 33em;
                 padding: 0.7em;
                 border-radius: 1em;
                 margin-top: 1.7em;

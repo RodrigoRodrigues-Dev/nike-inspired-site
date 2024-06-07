@@ -1,8 +1,9 @@
 <script setup>
-import { inject, ref, watch } from 'vue';
+import { ref, watch, inject } from 'vue';
+import { useFavoriteStore } from '@/stores/favoriteStore';
 
 const fav = inject('fav');
-const { addToFavoritePlus } = fav;
+const favoriteStore = fav.favoriteStore;
 
 const props = defineProps({
   img: String,
@@ -13,28 +14,19 @@ const props = defineProps({
   onClickAdd: Function,
 });
 
-// Função para recuperar o estado de isLiked do localStorage ou usar o valor padrão
-const initialIsLiked = () => {
-  const storedValue = localStorage.getItem(`isLiked-${props.title}`);
-  return storedValue !== null ? JSON.parse(storedValue) : props.isFavorite;
-};
+const isLiked = ref(favoriteStore.isFavorite(props.img));
 
-const isLiked = ref(initialIsLiked());
-
-// Observa mudanças no isLiked e atualiza o localStorage e sessionStorage
-watch(isLiked, (newVal) => {
-  localStorage.setItem(`isLiked-${props.title}`, JSON.stringify(newVal));
-  sessionStorage.setItem(`isLiked-${props.title}`, JSON.stringify(newVal));
+watch(() => props.isFavorite, (newValue) => {
+  isLiked.value = newValue;
 });
 
 const addFavorite = () => {
   isLiked.value = !isLiked.value;
-  addToFavoritePlus({
+  favoriteStore.toggleFavorite({
     img: props.img,
     title: props.title,
     type: props.type,
     price: props.price,
-    isFavorite: isLiked.value
   });
 };
 </script>

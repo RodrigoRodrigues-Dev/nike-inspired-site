@@ -1,49 +1,39 @@
 <script setup>
 import { ref, provide, computed } from 'vue';
+import { useFavoriteStore } from '@/stores/favoriteStore';
 
+// Referências reativas
 const cart = ref([]);
-const fav = ref([]);
+const favoriteStore = useFavoriteStore();
 
-const totalPrice = computed(
-  () => cart.value.reduce((acc, item) => acc + item.price, 0)
+// Computed para calcular o preço total do carrinho
+const totalPrice = computed(() => 
+  cart.value.reduce((acc, item) => acc + item.price, 0)
 );
 
+// Função para adicionar item ao carrinho
 const addToCart = (item) => {
   cart.value.push(item);
   item.isAdded = true;
 };
 
-const addToFavorite = (item) => {
-  fav.value.push(item);
-  item.isFavorite = true;
-};
-
-const addToFavoritePlus = (item) => {
-  if (item.isFavorite) {
-    addToFavorite(item);
-  } else {
-    removeFromFav(item);
+// Função para remover item do carrinho
+const removeFromCart = (item) => {
+  const index = cart.value.indexOf(item);
+  if (index > -1) {
+    cart.value.splice(index, 1);
+    item.isAdded = false;
   }
 };
 
-const removeFromCart = (item) => {
-  cart.value.splice(cart.value.indexOf(item), 1);
-  item.isAdded = false;
-};
-
-const removeFromFav = (item) => {
-  fav.value.splice(cart.value.indexOf(item), 1);
-  item.isFavorite = false;
-};
-
+// Função para limpar o carrinho
 const clearCart = () => {
   cart.value = [];
 };
 
+// Prover os estados e métodos para os componentes filhos
 provide('fav', {
-  fav,
-  addToFavoritePlus,
-  removeFromFav
+  favoriteStore
 });
 
 provide('cart', {
@@ -58,6 +48,3 @@ provide('cart', {
 <template>
   <router-view></router-view>
 </template>
-
-<style lang="scss">
-</style>

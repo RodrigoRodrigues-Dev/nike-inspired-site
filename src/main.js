@@ -1,15 +1,19 @@
-import './assets/styles/main.scss'
+import './assets/styles/main.scss';
 
 // Imports
-import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
-import App from './App.vue'
-import Home from './pages/Home.vue'
-import Drawer from './pages/Drawer.vue'
-import Favorites from './pages/Favorites.vue'
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import { createPinia } from 'pinia';
+import App from './App.vue';
+import Home from './pages/Home.vue';
+import Drawer from './pages/Drawer.vue';
+import Favorites from './pages/Favorites.vue';
 
 // Criação da aplicação Vue
-const app = createApp(App)
+const app = createApp(App);
+
+// Criação do Pinia
+const pinia = createPinia();
 
 // Definição das rotas
 const routes = [
@@ -24,27 +28,24 @@ const routes = [
       path: '/Favorites', 
       name: 'Favorites', 
       component: Favorites,
-      meta: { title: 'Favoritos - nike' }
-  },
-]
+      meta: { title: 'Favoritos - Nike' }
+    },
+];
 
-// Criação do router
 const router = createRouter({
     history: createWebHistory(),
     routes
-})
+});
 
 router.beforeEach((to, from, next) => {
     if (to.meta.title) {
-      document.title = to.meta.title;
+        document.title = to.meta.title;
     } else {
-      document.title = 'Nike';
+        document.title = 'Nike';
     }
     next();
 });
 
-// Uso do router na aplicação Vue
-app.use(router)
-
-// Montagem da aplicação Vue no elemento com id 'app'
-app.mount('#app')
+app.use(pinia);
+app.use(router);
+app.mount('#app');
