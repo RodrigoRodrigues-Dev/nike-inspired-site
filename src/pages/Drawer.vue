@@ -1,31 +1,29 @@
 <script setup>
-import { ref } from 'vue';
-import { inject } from 'vue';
+import { ref, inject } from 'vue';
 import HeaderMinified from '@/components/HeaderMinified.vue';
 import CartList from '@/components/CartList.vue';
 import { RouterLink } from 'vue-router';
 
 const { totalPrice, cart, clearCart } = inject('cart');
 
-function aplicarDesconto(valor) {
-    const desconto = valor * 0.10;
-    const valorComDesconto = valor - desconto;
-    const valorComDescontoInteiro = Math.round(valorComDesconto);
-    return formatPrice(valorComDescontoInteiro);
-}
-
 const compraFinalizada = ref(false);
 
-function finalizarCompra() {
-    compraFinalizada.value = true;
+function aplicarDesconto(valor) {
+  const desconto = valor * 0.10;
+  const valorComDesconto = valor - desconto;
+  const valorComDescontoInteiro = Math.round(valorComDesconto);
+  return formatPrice(valorComDescontoInteiro);
+}
 
-    clearCart();
+function finalizarCompra() {
+  compraFinalizada.value = true;
+  clearCart();
 }
 
 const formatPrice = (price) => {
-    const parts = price.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    return `R$ ${parts.join(",")}`;
+  const parts = price.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return `R$ ${parts.join(",")}`;
 };
 </script>
 
@@ -115,131 +113,144 @@ const formatPrice = (price) => {
 @import '/src/assets/styles/_variaveis.scss';
 
 .drawer {
-    &--empty, &--confirmation {
-        margin: auto;
-        max-width: 1600px;
-        height: 70vh;
+  &--empty, &--confirmation {
+    margin: auto;
+    max-width: 100em;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &__details {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        &__container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            &__details {
-                img {
-                    height: 2.8em;
-                    margin-right: 1em
-                }
-            }
-
-            &__btn {
-                @include btn(1em);
-                width: 33em;
-                padding: 0.7em;
-                border-radius: 1em;
-                margin-top: 1.7em;
-            }
+        img {
+          height: 1.9em;
+          margin-right: 0.7em;
         }
+      }
+
+      &__btn {
+        @include btn(1em);
+        width: 45em;
+        padding: 0.7em;
+        border-radius: 1em;
+        margin-top: 1.7em;
+      }
     }
+  }
 }
 
 .drawer-container {
-    position: relative;
+  position: relative;
 }
 
 .cart-container {
-    max-width: 1200px;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 0 6em 0;
+  max-width: 75em;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 6em 0;
 }
 
 .subtotal {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    background-color: $colorCard;
-    padding: 1em 3em;
-    font-weight: 900;
-    
-    &__label {
-        font-size: 1.5em;
-    }
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background-color: $colorCard;
+  padding: 1em 3em;
+  font-weight: 900;
 
-    &__value {
-        font-size: 1.5em;
-        margin-left: 1em;
-    }
+  &__label {
+    font-size: 1.5em;
+  }
+
+  &__value {
+    font-size: 1.5em;
+    margin-left: 1em;
+  }
 }
 
 .resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+
+  &__title {
+    padding: 1em 0;
+  }
+
+  &__item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
+    justify-content: space-between;
+    padding: 1.5em;
+    width: 100%;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #ccc;
+  }
 
-    &__title {
-        padding: 1em 0;
+  &__item-value {
+    &__frete {
+      color: green;
     }
 
-    &__item {
-        display: flex;
-        justify-content: space-between;
-        padding: 1.5em;
-        width: 100%;
-        margin-bottom: 1em;
-        border-bottom: 2px solid #ccc;
+    &__total {
+      font-weight: 900;
     }
-
-    &__item-value {
-        &__frete {
-            color: green;
-        }
-
-        &__total {
-            font-weight: 900;
-        }
-    }
+  }
 }
 
 .cart-button {
-    @include btn(1em);
-    width: 70%;
-    padding: 1em;
-    border-radius: 1em;
-    cursor: pointer;
+  @include btn(1em);
+  width: 70%;
+  padding: 1em;
+  border-radius: 1em;
+  cursor: pointer;
 }
 
 .footerMin {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+
+  &__paymentMethods {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 2em;
+    list-style: none;
 
-    &__paymentMethods {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        list-style: none;
-
-        &__item {
-            margin-left: 1.5em;
-
-            img {
-                width: 2.4em;
-            }
-        }
+    &__item {
+      margin-left: 1.5em;
+      img {
+        width: 2.4em;
+      }
     }
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-to {
+  position: fixed;
+  z-index: 9999;
+  opacity: 0;
 }
 </style>

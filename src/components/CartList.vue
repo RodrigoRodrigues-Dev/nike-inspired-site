@@ -1,14 +1,14 @@
 <script setup>
-    import { inject } from 'vue'
-    import CartItem from './CartItem.vue';
+import { inject } from 'vue'
+import CartItem from './CartItem.vue';
 
-    const { cart, removeFromCart } = inject('cart')
+const { cart, removeFromCart } = inject('cart');
 
-    const formatPrice = (price) => {
-        const parts = price.toString().split(".");
-        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        return `R$ ${parts.join(",")},00`;
-    };
+const formatPrice = (price) => {
+    const parts = price.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return `R$ ${parts.join(",")},00`;
+};
 </script>
 
 <template>
@@ -19,13 +19,15 @@
             :title="item.title"
             :price="formatPrice(item.price)"
             :imgURL="item.imgURL"
-            @on-click-remove="() => removeFromCart(item)"
+            @onClickRemove="() => removeFromCart(item)"
         />
     </div>
 </template>
 
 <style lang="scss">
-    .cartList {
-        width: 100%;
-    }
+@import '/src/assets/styles/_variaveis.scss';
+
+.cartList {
+    width: 100%;
+}
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-    import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -11,15 +11,15 @@
 </template>
 
 <style lang="scss">
-    @import '/src/assets/styles/_variaveis.scss';
+@import '/src/assets/styles/_variaveis.scss';
 
-    .headerMin {
-        background-color: $colorCard;
-        padding: 2em;
-        margin-bottom: 2em;
+.headerMin {
+    background-color: $colorCard;
+    padding: 2em;
+    margin-bottom: 1.25em;
 
-        img {
-            width: 6em;
-        }
+    img {
+        width: 6em;
     }
+}
 </style>

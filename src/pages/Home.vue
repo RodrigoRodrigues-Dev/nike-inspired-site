@@ -7,9 +7,11 @@ import Releases from '@/components/Releases.vue';
 import Footer from '@/components/Footer.vue';
 import PopupItemAdd from '@/components/PopupItemAdd.vue';
 
+// Injeção do carrinho e definição do estado de exibição do popup
 const { cart } = inject('cart');
 const showPopup = ref(false);
 
+// Observa mudanças no carrinho para exibir o popup
 watch(cart, () => {
   showPopup.value = true;
   setTimeout(() => {

@@ -23,8 +23,8 @@
         .hero {
             position: relative;
             overflow: hidden;
-            height: 900px;
-            margin-bottom: 48px;
+            height: 56.25em;
+            margin-bottom: 3em;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,16 +38,16 @@
             &::before {
                 content: '';
                 height: 100%;
-                width: 350px;
+                width: 21.875em;
                 position: absolute;
                 bottom: 0;
                 background: linear-gradient(15deg, $colorGradientOne, $colorGradientTwo, $colorGradientThree);
-                border-radius: 40px;
+                border-radius: 2.5em;
             }
 
             &__image {
                 width: 50%;
-                max-width: 560px;
+                max-width: 35em;
                 height: auto;
                 transform: scaleX(-1) rotate(30deg);
             }
@@ -56,29 +56,33 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                font-size: 116px;
+                font-size: 7.25em;
                 text-transform: uppercase;
-                letter-spacing: 4px;
-                padding: 35px 0px;
+                letter-spacing: 0.03em;
+                padding: 0.2em 0em;
                 font-weight: 900;
                 
                 &--white {
-                    margin-left: 4px;
+                    margin-left: 0.03em;
                     color: $colorSecondary;
                 }
             }
 
-            &__productLabel,
             &__productDetails {
                 position: absolute;
-                bottom: 100px;
+                bottom: 9em;
+            }
+
+            &__productLabel {
+                position: absolute;
+                bottom: 1em;
             }
 
             &__productLabel {
                 right: 0;
                 text-transform: uppercase;
                 font-weight: 900;
-                font-size: 128px;
+                font-size: 8em;
                 writing-mode: vertical-lr;
                 color: transparent;
 
@@ -92,22 +96,22 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-end;
-                width: 272px;
+                width: 17em;
 
                 &__description {
                     margin-bottom: 10%;
                 }
 
                 &__price {
-                    font-size: 50px;
+                    font-size: 3.125em;
                     font-weight: 900;
-                    margin-bottom: 20px;
+                    margin-bottom: 0.5em;
                 }
 
                 &__button {
-                    @include btn(15px);
-                    padding: 10px 30px;
-                    border-radius: 50px;
+                    @include btn(1em);
+                    padding: 0.625em 1.875em;
+                    border-radius: 3.125em;
                     border: none;
                     background-color: $colorMain;
                     width: 100%;

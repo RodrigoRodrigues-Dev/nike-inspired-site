@@ -88,7 +88,7 @@ const removeFavoriteItem = () => {
       }
 
       &__type {
-        margin: 0.5em 0px;
+        margin: 0.5em 0em;
         font-weight: 700;
         color: rgb(112, 112, 112);
       }

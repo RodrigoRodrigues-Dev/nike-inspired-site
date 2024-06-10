@@ -4,12 +4,14 @@ import HeaderMinified from '@/components/HeaderMinified.vue';
 import FavoriteItem from '@/components/FavoriteItem.vue';
 import PopupItemAdd from '@/components/PopupItemAdd.vue';
 
+// Injeção dos estados necessários
 const favStore = inject('fav').favoriteStore;
 const { cart } = inject('cart');
 
 const showPopup = ref(false);
 const favorites = computed(() => favStore.favorites);
 
+// Observa mudanças no carrinho para exibir o popup
 watch(cart, () => {
   showPopup.value = true;
   setTimeout(() => {
@@ -60,7 +62,7 @@ watch(cart, () => {
 @import '/src/assets/styles/_variaveis.scss';
 
 .favorites {
-  max-width: 1600px;
+  max-width: 100em;
   width: 100%;
   margin: auto;
 
@@ -73,12 +75,12 @@ watch(cart, () => {
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3em;
+    gap: 3em; 
   }
 
   &--empty__container {
     margin: auto;
-    max-width: 1600px;
+    max-width: 100em;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -86,10 +88,10 @@ watch(cart, () => {
     align-items: center;
 
     &__btn {
-      @include btn(1em);
+      @include btn(1em); 
       width: 33em;
       padding: 0.7em;
-      border-radius: 1em;
+      border-radius: 1em; 
       margin-top: 1.7em;
     }
   }
@@ -98,6 +100,7 @@ watch(cart, () => {
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
+
 .fade-enter, .fade-leave-to {
   position: fixed;
   z-index: 9999;

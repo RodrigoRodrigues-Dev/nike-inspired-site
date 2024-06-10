@@ -39,10 +39,10 @@
     .popupItem {
         position: fixed;
         z-index: 9999;
-        top: 110px;
-        width: 450px;
-        right: 15px;
-        height: 250px;
+        top: 6.875em;
+        width: 28.125em;
+        right: 1em;
+        height: 15.625em;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -58,8 +58,8 @@
             margin-top: 1em;
 
             &__img {
-                margin-left: 8px;
-                width: 16px;
+                margin-left: 0.5em;
+                width: 1em;
             }
         }
 
@@ -73,7 +73,7 @@
                 width: 100%;
                 display: flex;
                 align-items: center;
-                padding: 24px 0px;
+                padding: 1.5em 0em;
                 
                 &__img {
                     width: 7em;
@@ -95,7 +95,7 @@
 
             button {
                 @include btn(1em);
-                width: 390px;
+                width: 24.5em;
                 border-radius: 1em;
                 padding: 0.5em;
                 margin-bottom: 1em;

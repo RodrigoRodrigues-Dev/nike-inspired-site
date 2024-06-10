@@ -34,8 +34,8 @@ const addFavorite = () => {
 <template>
   <div class="card">
     <div class="card__images"> 
-      <img @click="addFavorite" class="card__images__favoriteIcon" :src="isLiked ? '/src/assets/images/icons/Favorite-icon-active.svg' : '/src/assets/images/icons/Favorite-icon.svg'" alt="Favorite Icon">
-      <img class="card__images__image" :src="img" alt="Product Image">
+      <img @click="addFavorite" class="card__images__favoriteIcon" :src="isLiked ? '/src/assets/images/icons/Favorite-icon-active.svg' : '/src/assets/images/icons/Favorite-icon.svg'" alt="Ícone Favorito">
+      <img class="card__images__image" :src="img" alt="Imagem do Produto">
     </div>
     <div class="card__description">
       <h2 class="card__description__title">{{ title }}</h2>
@@ -54,25 +54,25 @@ const addFavorite = () => {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 0.625em;
+  padding: 0.9375em;
 
   &__images {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
-      height: 300px;
+      height: 18.75em;
       background-color: $colorCard;
-      border-radius: 10px;
-      margin-bottom: 30px;
+      border-radius: 0.625em;
+      margin-bottom: 1.875em;
 
       &__favoriteIcon {
           position: absolute;
           top: 0;
           left: 0;
-          margin: 30px;
-          width: 30px;
+          margin: 1.875em;
+          width: 1.875em;
 
           &:hover {
               cursor: pointer;
@@ -87,11 +87,11 @@ const addFavorite = () => {
   &__description {
     display: flex;
     flex-direction: column;
-    row-gap: 5px;
+    row-gap: 0.3125em;
     width: 100%;
 
     &__title {
-      font-size: 20px;
+      font-size: 1.25em;
     }
 
     &__type {
@@ -107,7 +107,7 @@ const addFavorite = () => {
         @include btn(1em);
         border: none;
         border-radius: 1em;
-        padding: 1em 0px;
+        padding: 1em 0em;
         margin-top: 0.8em;
     }
   }

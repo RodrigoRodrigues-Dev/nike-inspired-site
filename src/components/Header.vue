@@ -1,5 +1,5 @@
 <script setup>
-    import { RouterLink } from 'vue-router';
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -31,43 +31,43 @@
 </template>
 
 <style lang="scss">
-    @import '../assets/styles/variaveis.scss';
+@import '../assets/styles/variaveis.scss';
 
-    .header {
-        position: sticky;
-        top: 0;
-        left: 0;
-        background-color: #fff;
-        padding: 24px 0px;
-        z-index: 999;
-        box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 1.5em 0;
+    z-index: 999;
+    box-shadow: 0px 0.375em 0.5em rgba(0, 0, 0, 0.1);
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        &__logo {
-            width: 112px;
-        }
+    &__logo {
+        width: 7em;
+    }
 
-        &__title {
-            text-transform: uppercase;
-            letter-spacing: 6px;
-            font-weight: bold;
-        }
+    &__title {
+        text-transform: uppercase;
+        letter-spacing: 0.375em;
+        font-weight: bold;
+    }
 
-        &__iconMenu {
-            display: flex;
+    &__iconMenu {
+        display: flex;
 
-            &__item {
-                margin-left: 14px;
+        &__item {
+            margin-left: 0.875em;
 
-                &:hover {
-                    cursor: pointer;
-                }
+            &:hover {
+                cursor: pointer;
             }
         }
     }
+}
 </style>
