@@ -56,14 +56,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 7.25em;
+    font-size: 6.90em;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.075em;
     padding: 0.2em 0;
     font-weight: 900;
 
     &--white {
-      margin-left: 0.03em;
+      margin-left: 0.05em;
       color: $colorSecondary;
     }
   }
