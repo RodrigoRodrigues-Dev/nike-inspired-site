@@ -34,9 +34,9 @@
             <div class="footer__container__content">
                 <p class="footer__container__content__title">Redes Sociais</p>
                 <ul>
-                    <li><img src="/src/assets/images/icons/Facebook.svg" alt="Ícone Facebook"></li> 
-                    <li><img src="/src/assets/images/icons/Instragam.svg" alt="Ícone Instagram"></li> 
-                    <li><img src="/src/assets/images/icons/YouTube.svg" alt="Ícone YouTube"></li>
+                    <li><img class="footer__container__content__img" src="/src/assets/images/icons/Facebook.svg" alt="Ícone Facebook"></li> 
+                    <li><img class="footer__container__content__img" src="/src/assets/images/icons/Instragam.svg" alt="Ícone Instagram"></li> 
+                    <li><img class="footer__container__content__img" src="/src/assets/images/icons/YouTube.svg" alt="Ícone YouTube"></li>
                 </ul>
             </div>
         </div>
@@ -56,7 +56,7 @@
     padding: 2.5em 0;
 
     &__container {
-        max-width: 75em;
+        max-width: 1200px;
         width: 100%;
         margin: auto;
         display: flex;
@@ -72,8 +72,11 @@
                     color: $colorSecondary;
                     font-size: 1.125em;
                     margin-bottom: 0.75em;
+                    display: block; /* Transforma os links em blocos para melhor alinhamento */
+                    cursor: pointer;
                 }
             }
+
             li {
                 font-size: 1em;
                 cursor: pointer;
@@ -84,10 +87,95 @@
                 display: flex;
                 justify-content: space-between;
             }
-            &:nth-child(1) a {
-                margin-bottom: 0.75em;
-                display: block;
-                cursor: pointer;
+        }
+    }
+
+    /* Estilos para diferentes tamanhos de dispositivos */
+
+    /* Dispositivos móveis pequenos */
+    @media (min-width: 320px) and (max-width: 480px) {
+        .footer__container {
+            max-width: 370px;
+
+            &__content {
+                ul,
+                span {
+                    font-size: 0.6em;
+                }
+
+                &__title {
+                    font-size: 0.7em;
+                }
+
+                &__img {
+                    width: 1.7em;
+                }
+            }
+        }
+    }
+
+    /* Dispositivos móveis grandes */
+    @media (min-width: 481px) and (max-width: 767px) {
+        .footer__container {
+            max-width: 460px;
+
+            &__content {
+                ul,
+                span {
+                    font-size: 0.6em;
+                }
+
+                &__title {
+                    font-size: 0.7em;
+                }
+
+                &__img {
+                    width: 1.6em;
+                }
+            }
+        }
+    }
+
+    /* Tablets */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .footer__container {
+            max-width: 750px;
+
+            &__content {
+                ul,
+                span {
+                    font-size: 0.7em;
+                }
+
+                &__title {
+                    font-size: 0.9em;
+                }
+
+                &__img {
+                    width: 1.7em;
+                }
+            }
+        }
+    }
+
+    /* Desktops pequenos/laptops */
+    @media (min-width: 1025px) and (max-width: 1280px) {
+        .footer__container {
+            max-width: 950px;
+
+            &__content {
+                ul,
+                span {
+                    font-size: 0.9em;
+                }
+
+                &__title {
+                    font-size: 0.8em;
+                }
+
+                &__img {
+                    width: 1.7em;
+                }
             }
         }
     }

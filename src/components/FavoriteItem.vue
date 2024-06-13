@@ -58,52 +58,72 @@ const removeFavoriteItem = () => {
 </template>
 
 <style lang="scss">
-  @import '/src/assets/styles/_variaveis.scss';
+@import '/src/assets/styles/_variaveis.scss';
 
-  .favoriteItem {
-    position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 3em;
-      background-color: $colorCard;
-      padding: 3em;
+.favoriteItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3em;
+  background-color: $colorCard;
+  padding: 3em;
 
-      &__remove {
-        position: absolute;
-        top: 3em;
-        right: 3em;
-        width: 1em;
-        cursor: pointer;
-      }
-
-      &__img {
-        width: 9em;
-        margin-bottom: 1em;
-      }
-
-      &__title {
-        font-size: 1.2em;
-      }
-
-      &__type {
-        margin: 0.5em 0em;
-        font-weight: 700;
-        color: rgb(112, 112, 112);
-      }
-
-      &__price {
-        font-size: 1.3em;
-        font-weight: 900;
-      }
-
-      &__btn {
-        margin-top: 1em;
-        @include btn(1em);
-        width: 70%;
-        border-radius: 1em;
-        padding: 0.4em;
-      }
+  &__remove {
+    position: absolute;
+    top: 3em;
+    right: 3em;
+    width: 1em;
+    cursor: pointer;
   }
+
+  &__img {
+    width: 9em;
+    margin-bottom: 1em;
+  }
+
+  &__title {
+    font-size: 1.2em;
+  }
+
+  &__type {
+    margin: 0.5em 0em;
+    font-weight: 700;
+    color: rgb(112, 112, 112);
+  }
+
+  &__price {
+    font-size: 1.3em;
+    font-weight: 900;
+  }
+
+  &__btn {
+    margin-top: 1em;
+    @include btn(1em);
+    width: 70%;
+    border-radius: 1em;
+    padding: 0.4em;
+  }
+
+  /* Estilos para tablets */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    &__img {
+      width: 7em;
+    }
+
+    &__price {
+      font-size: 1.2em;
+      font-weight: 900;
+    }
+
+    &__btn {
+      margin-top: 1em;
+      @include btn(0.8em);
+      width: 95%;
+      border-radius: 1em;
+      padding: 0.7em;
+    }
+  }
+}
 </style>

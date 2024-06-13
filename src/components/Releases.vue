@@ -137,10 +137,73 @@ watch(filters, fetchItems);
       border: none;
       outline: none;
       padding: 0 0.625em;
+      background: transparent;
 
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+}
+
+/* Estilos para dispositivos móveis médios e pequenos (telefones em modo paisagem) */
+@media (min-width: 320px) and (max-width: 767px) {
+  .releases {
+    margin-bottom: 3em;
+
+    &-container {
+      margin-bottom: 2.5em;
+      flex-direction: column;
+      gap: 2em;
+    }
+
+    &__title {
+      font-size: 2em;
+      margin-right: 0.3em;
+    }
+
+    &__search {
+      width: 350px;
+      padding: 0.5em 1em;
+      margin: 0 2em;
+    }
+  }
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .releases {
+    &-container {
+      margin-bottom: 2.5em;
+      flex-direction: column;
+      gap: 2em;
+    }
+
+    &__title {
+      font-size: 2.3em;
+    }
+
+    &__search {
+      width: 550px;
+    }
+  }
+}
+
+/* Estilos para desktops pequenos/laptops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .releases {
+    &-container {
+      margin-bottom: 2.5em;
+      flex-direction: column;
+      gap: 2em;
+    }
+
+    &__title {
+      font-size: 2.5em;
+    }
+
+    &__search {
+      width: 750px;
     }
   }
 }

@@ -75,7 +75,7 @@ watch(cart, () => {
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3em; 
+    gap: 3em;
   }
 
   &--empty__container {
@@ -88,22 +88,96 @@ watch(cart, () => {
     align-items: center;
 
     &__btn {
-      @include btn(1em); 
+      @include btn(1em);
       width: 33em;
       padding: 0.7em;
-      border-radius: 1em; 
+      border-radius: 1em;
       margin-top: 1.7em;
     }
   }
 }
 
-.fade-enter-active, .fade-leave-active {
+// Animação de fade para entrada e saída
+.fade-enter-active,
+.fade-leave-active {
   transition: opacity 0.5s;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   position: fixed;
   z-index: 9999;
   opacity: 0;
+}
+
+// Estilos para telas pequenas (mobile)
+@media (min-width: 320px) and (max-width: 767px) {
+  .favorites {
+    width: 340px;
+
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &--empty__container {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      &__btn {
+        width: 27em;
+      }
+    }
+  }
+}
+
+// Estilos para telas médias (tablets e desktops menores)
+@media (min-width: 768px) and (max-width: 1624px) {
+  .favorites {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+// Estilos específicos para tablets
+@media (min-width: 768px) and (max-width: 1024px) {
+  .favorites {
+    width: 740px;
+
+    &__img {
+      width: 2em;
+    }
+
+    &__title {
+      font-size: 1.9em;
+    }
+  }
+}
+
+// Estilos específicos para desktops
+@media (min-width: 1025px) and (max-width: 1624px) {
+  .favorites {
+    width: 970px;
+
+    &__img {
+      width: 2em;
+    }
+
+    &__title {
+      font-size: 1.9em;
+    }
+  }
+}
+
+// Estilos compartilhados para containers vazios em telas médias
+@media (min-width: 768px) and (max-width: 1624px) {
+  .favorites {
+    &--empty__container {
+      h1 {
+        font-size: 1.6em;
+      }
+    }
+  }
 }
 </style>

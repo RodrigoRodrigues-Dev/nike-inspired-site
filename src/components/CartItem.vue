@@ -60,5 +60,27 @@ defineProps({
         width: 1.2em;
         cursor: pointer;
     }
+
+    /* Estilos para dispositivos móveis */
+    @media (max-width: 768px) {
+        height: 4em;
+        padding: 1em;
+
+        &__title {
+            font-size: 0.9em;
+            position: absolute;
+            right: 13em;
+        }
+
+        &__image {
+            width: 4em;
+        }
+
+        &__price {
+            font-size: 0.9em;
+            position: absolute;
+            right: 5em;
+        }
+    }
 }
 </style>

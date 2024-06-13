@@ -31,43 +31,69 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style lang="scss">
+// Importação das variáveis de estilo
 @import '../assets/styles/variaveis.scss';
 
 .header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-    padding: 1.5em 0;
-    z-index: 999;
-    box-shadow: 0px 0.375em 0.5em rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 1.5em 0;
+  z-index: 999;
+  box-shadow: 0px 0.375em 0.5em rgba(0, 0, 0, 0.1);
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 7em;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: 0.375em;
+    font-weight: bold;
+  }
+
+  &__iconMenu {
+    display: flex;
+
+    &__item {
+      margin-left: 0.875em;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        width: 1.7em;
+      }
     }
+  }
+}
 
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .header {
     &__logo {
-        width: 7em;
+      width: 5em;
     }
 
     &__title {
-        text-transform: uppercase;
-        letter-spacing: 0.375em;
-        font-weight: bold;
+      letter-spacing: 0.2em;
     }
 
     &__iconMenu {
-        display: flex;
+      gap: 1em;
 
-        &__item {
-            margin-left: 0.875em;
-
-            &:hover {
-                cursor: pointer;
-            }
-        }
+      &__item {
+        margin-left: 0;
+      }
     }
+  }
 }
 </style>

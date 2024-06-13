@@ -154,7 +154,7 @@ const formatPrice = (price) => {
 }
 
 .cart-container {
-  max-width: 75em;
+  max-width: 1200px;
   width: 100%;
   margin: auto;
   display: flex;
@@ -237,6 +237,7 @@ const formatPrice = (price) => {
 
     &__item {
       margin-left: 1.5em;
+
       img {
         width: 2.4em;
       }
@@ -244,6 +245,7 @@ const formatPrice = (price) => {
   }
 }
 
+// Animação de fade para entrada e saída
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
@@ -252,5 +254,193 @@ const formatPrice = (price) => {
   position: fixed;
   z-index: 9999;
   opacity: 0;
+}
+
+// Estilos para dispositivos móveis pequenos
+@media (min-width: 320px) and (max-width: 480px) {
+  .cart-container {
+    max-width: 370px;
+    margin: auto;
+    padding: 0 0 9em 0;
+  }
+
+  .subtotal {
+    width: 100%;
+    padding: 1em 1em;
+    border-radius: 2em;
+
+    &__label, &__value {
+      font-size: 1.2em;
+    }
+  }
+
+  .resume {
+    margin-top: 2em;
+    width: 100%;
+  }
+
+  .drawer {
+    &--empty, &--confirmation {
+      max-width: 10em;
+
+      &__container {
+        &__details {
+          h1 {
+            font-size: 1.4em;
+          }
+
+          img {
+            height: 1.5em;
+          }
+        }
+
+        &__btn {
+          width: 28em;
+          padding: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+// Estilos para dispositivos móveis grandes
+@media (min-width: 481px) and (max-width: 767px) {
+  .cart-container {
+    max-width: 470px;
+    margin: auto;
+    padding: 0 0 9em 0;
+  }
+
+  .subtotal {
+    width: 100%;
+    padding: 1em 1em;
+    border-radius: 2em;
+
+    &__label, &__value {
+      font-size: 1.2em;
+    }
+  }
+
+  .resume {
+    margin-top: 2em;
+    width: 100%;
+  }
+
+  .drawer {
+    &--empty, &--confirmation {
+      max-width: 10em;
+
+      &__container {
+        &__details {
+          h1 {
+            font-size: 1.4em;
+          }
+
+          img {
+            height: 1.5em;
+          }
+        }
+
+        &__btn {
+          width: 28em;
+          padding: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+// Estilos para tablets
+@media (min-width: 768px) and (max-width: 1024px) {
+  .drawer-container {
+    max-width: 670px;
+    margin: auto;
+    padding: 0 0 9em 0;
+  }
+
+  .subtotal {
+    width: 100%;
+    padding: 1em 1em;
+    border-radius: 2em;
+
+    &__label, &__value {
+      font-size: 1.2em;
+    }
+  }
+
+  .resume {
+    margin: 2em 0;
+    width: 100%;
+  }
+
+  .drawer {
+    &--empty, &--confirmation {
+      max-width: 10em;
+
+      &__container {
+        &__details {
+          h1 {
+            font-size: 1.4em;
+          }
+
+          img {
+            height: 1.5em;
+          }
+        }
+
+        &__btn {
+          width: 28em;
+          padding: 0.7em;
+        }
+      }
+    }
+  }
+
+  .cartItem {
+    &__title {
+      position: absolute;
+      left: 13em;
+      font-size: 1.1em;
+    }
+
+    &__price {
+      position: absolute;
+      right: 6em;
+      font-size: 1em;
+    }
+  }
+}
+
+// Estilos para desktops
+@media (min-width: 1025px) and (max-width: 1624px) {
+  .drawer-container {
+    max-width: 970px;
+    margin: auto;
+    padding: 0 0 9em 0;
+  }
+}
+
+// Estilos compartilhados para .drawer em telas médias
+@media (max-width: 1024px) {
+  .drawer {
+    &--empty, &--confirmation {
+      &__container {
+        &__details {
+          h1 {
+            font-size: 1.4em;
+          }
+
+          img {
+            height: 1.5em;
+          }
+        }
+
+        &__btn {
+          width: 28em;
+          padding: 0.7em;
+        }
+      }
+    }
+  }
 }
 </style>
