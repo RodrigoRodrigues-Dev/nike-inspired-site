@@ -5,6 +5,9 @@ import { useFavoriteStore } from '@/stores/favoriteStore';
 const fav = inject('fav');
 const favoriteStore = fav.favoriteStore;
 
+import FavoriteIconActive from '/src/assets/images/icons/Favorite-icon-active.svg';
+import FavoriteIconInactive from '/src/assets/images/icons/Favorite-icon.svg';
+
 const props = defineProps({
   img: String,
   title: String,
@@ -34,7 +37,9 @@ const addFavorite = () => {
 <template>
   <div class="card">
     <div class="card__images"> 
-      <img @click="addFavorite" class="card__images__favoriteIcon" :src="isLiked ? '/src/assets/images/icons/Favorite-icon-active.svg' : '/src/assets/images/icons/Favorite-icon.svg'" alt="Ícone Favorito">
+      <img @click="addFavorite" class="card__images__favoriteIcon" 
+           :src="isLiked ? FavoriteIconActive : FavoriteIconInactive" 
+           alt="Ícone Favorito">
       <img class="card__images__image" :src="img" alt="Imagem do Produto">
     </div>
     <div class="card__description">
