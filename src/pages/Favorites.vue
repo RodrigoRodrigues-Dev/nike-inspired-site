@@ -65,6 +65,7 @@ watch(cart, () => {
   max-width: 100em;
   width: 100%;
   margin: auto;
+  margin-bottom: 7em;
 
   &__title {
     margin: 1.6em 0;
