@@ -5,7 +5,7 @@
       <span class="hero__header__subtitle">Elegância e Conforto</span>
     </div>
     <div class="hero__image-wrapper">
-      <img class="" src="../assets/images/Nike Air Jordan 4 'Teal'.png" alt="">
+      <img class="" src="../assets/images/Nike_Air_Jordan_4_Teal.png" alt="">
       <h2 class="hero__image-wrapper__productLabel">
         AIR JORDAN
       </h2>
