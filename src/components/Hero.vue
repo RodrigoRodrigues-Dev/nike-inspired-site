@@ -1,334 +1,180 @@
 <template>
-    <div class="hero">
-        <img class="hero__image" src="/src/assets/images/nike-lunarlon.png" alt="">
-        <h1 class="hero__title">
-            Nike 
-            <br> 
-            lunar<span class="hero__title--white">lon</span>
-        </h1>
-        <h2 class="hero__productLabel">
-            just do it
-        </h2>
-        <div class="hero__productDetails">
-            <span class="hero__productDetails__description">O Tênis Nike Lunarlon proporciona conforto, estilo e desempenho excepcionais. Com uma parte superior respirável e amortecimento responsivo na entressola, é ideal para corredores que buscam qualidade e sofisticação.</span>
-            <strong class="hero__productDetails__price">R$ 599,90</strong>
-            <button class="hero__productDetails__button">Indisponivel</button>
-        </div>
+  <div class="hero">
+    <div class="hero__header">
+      <h2 class="hero__header__title">Nike Air Jordan 4 "Teal"</h2>
+      <span class="hero__header__subtitle">Elegância e Conforto</span>
     </div>
+    <div class="hero__image-wrapper">
+      <img class="" src="../assets/images/Nike Air Jordan 4 'Teal'.png" alt="">
+      <h2 class="hero__image-wrapper__productLabel">
+        AIR JORDAN
+      </h2>
+    </div>
+  </div>
+  <div class="hero-details">
+    <div class="container">
+      <h3 class="hero-details__title">
+        Descrição
+      </h3>
+      <p class="hero-details__description">
+        O NIKE AIR JORDAN 4 "TEAL" combina um tom vibrante de teal com detalhes em preto e cinza, criando um visual
+        marcante. Feito com materiais de alta qualidade e tecnologia de amortecimento Air-Sole, oferece conforto
+        excepcional e suporte superior. Ideal para quem busca estilo e desempenho, seja no dia a dia ou em ocasiões
+        especiais.
+      </p>
+      <button class="hero-details__btn">Indisponível</button>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
 @import '../assets/styles/variaveis.scss';
 
 .hero {
-  position: relative;
-  overflow: hidden;
-  height: 56.25em;
-  margin-bottom: 3em;
+  z-index: -2;
+  height: 70vmin;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  position: relative;
+  background-color: $color-teal;
+  padding: 5rem 0;
 
-  // Disables text selection
+  // Desativa a seleção de texto
   -webkit-user-select: none; /* Safari */
-  -moz-user-select: none;    /* Firefox */
-  -ms-user-select: none;     /* IE 10+/Edge */
-  user-select: none;         /* Standard */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE 10+/Edge */
+  user-select: none; /* Padrão */
 
-  &::before {
-    content: '';
-    height: 100%;
-    width: 21.875em;
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(15deg, $colorGradientOne, $colorGradientTwo, $colorGradientThree);
-    border-radius: 2.5em;
+  &__header {
+    font-size: 3vmin;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: $color-white;
+
+    &__subtitle {
+      font-size: 1rem;
+    }
   }
 
-  &__image {
-    width: 50%;
-    max-width: 35em;
-    height: auto;
-    transform: scaleX(-1) rotate(30deg);
+  &__image-wrapper {
+    height: 33vmin;
+    width: 90vw;
+    max-width: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: scaleX(1) rotate(-25deg);
+    }
+
+    &::before {
+      content: '';
+      z-index: -2;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      height: 33vmin;
+      width: 33vmin;
+      background-color: $color-soft-teal;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__productLabel {
+      z-index: -1;
+      position: absolute;
+      top: 13%;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 12vmin;
+      color: transparent;
+
+      -webkit-text-stroke: 2px $color-light-teal;
+      -moz-text-stroke: 2px $color-light-teal;
+    }
+  }
+}
+
+.hero-details {
+  background-color: $color-deep-teal;
+  padding: 2rem;
+
+  .container {
+    color: $color-white;
+
+    @media (min-width: 320px) and (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 6.90em;
+    font-size: 1.4rem;
     text-transform: uppercase;
-    letter-spacing: 0.075em;
-    padding: 0.2em 0;
-    font-weight: 900;
-
-    &--white {
-      margin-left: 0.05em;
-      color: $colorSecondary;
-    }
   }
 
-  &__productDetails {
-    position: absolute;
-    bottom: 9em;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: 17em;
+  &__description {
+    width: 75%;
+    margin: 1rem 0;
 
-    &__description {
-      margin-bottom: 10%;
+    @media (min-width: 320px) and (max-width: 1024px) {
+      font-size: 0.7rem;
       text-align: center;
     }
-
-    &__price {
-      font-size: 3.125em;
-      font-weight: 900;
-      margin-bottom: 0.5em;
-    }
-
-    &__button {
-      @include btn(1em);
-      padding: 0.625em 1.875em;
-      border-radius: 3.125em;
-      border: none;
-      background-color: $colorMain;
-      width: 100%;
-    }
   }
 
-  &__productLabel {
-    position: absolute;
-    bottom: 1em;
-    right: 0;
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 8em;
-    writing-mode: vertical-lr;
-    color: transparent;
-
-    -webkit-text-stroke: 2px $colorTertiary;
-    -moz-text-stroke: 2px $colorTertiary;
+  &__btn {
+    @include btn-teal-light(1rem);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: 22rem;
   }
 }
 
-/* Estilos para dispositivos móveis pequenos */
-@media (min-width: 320px) and (max-width: 480px) {
+@media (max-width: 768px) {
   .hero {
-    height: 37em;
+    height: 90vmin;
 
-    &::before {
-      width: 9em;
-      top: 0;
-    }
+    &__header {
+      font-size: 3.5vmin;
 
-    &__image {
-      width: 48%;
-    }
-
-    &__title {
-      font-size: 3em;
-      letter-spacing: 0.02em;
-      padding: 0.3em 0;
-
-      &--white {
-        margin-left: 0.12em;
+      &__subtitle {
+        font-size: 0.8rem;
       }
     }
 
-    &__productDetails {
-      bottom: 3em;
-      width: 9em;
-
-      &__price {
-        font-size: 1.7em;
+    &__image-wrapper {
+      &__productLabel {
+        -webkit-text-stroke: 1px $color-light-teal;
+        -moz-text-stroke: 1px $color-light-teal;
       }
-
-      &__button {
-        @include btn(0.7em);
-      }
-    }
-
-    &__productLabel {
-      font-size: 5em;
-
-      -webkit-text-stroke: 1px $colorTertiary;
-      -moz-text-stroke: 1px $colorTertiary;
     }
   }
-}
 
-/* Estilos para dispositivos móveis grandes */
-@media (min-width: 481px) and (max-width: 767px) {
-  .hero {
-    height: 38em;
-
-    &::before {
-      width: 9em;
-      top: 0;
-    }
-
-    &__image {
-      width: 48%;
+  .hero-details {
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     &__title {
-      font-size: 3.4em;
-      letter-spacing: 0.01em;
-      padding: 0.3em 0;
-
-      &--white {
-        margin-left: 0.12em;
-      }
+      font-size: 1rem;
     }
 
-    &__productDetails {
-      bottom: 3em;
-      width: 10em;
-
-      &__price {
-        font-size: 1.7em;
-      }
-
-      &__button {
-        @include btn(0.7em);
-      }
-    }
-
-    &__productLabel {
-      font-size: 5em;
-
-      -webkit-text-stroke: 1px $colorTertiary;
-      -moz-text-stroke: 1px $colorTertiary;
-    }
-  }
-}
-
-/* Estilos para tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .hero {
-    height: 40em;
-
-    &::before {
-      width: 12em;
-      top: 0;
-    }
-
-    &__image {
-      width: 48%;
-    }
-
-    &__title {
-      font-size: 4.5em;
-      letter-spacing: 0.07em;
-      padding: 0.3em 0;
-
-      &--white {
-        margin-left: 0.09em;
-      }
-    }
-
-    &__productDetails {
-      bottom: 3em;
-      width: 15em;
-
-      &__price {
-        font-size: 2em;
-      }
-
-      &__button {
-        @include btn(1em);
-      }
-    }
-
-    &__productLabel {
-      font-size: 5em;
-
-      -webkit-text-stroke: 1px $colorTertiary;
-      -moz-text-stroke: 1px $colorTertiary;
-    }
-  }
-}
-
-/* Estilos para desktops pequenos/laptops */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .hero {
-    height: 55em;
-
-    &::before {
-      width: 17em;
-      top: 0;
-    }
-
-    &__image {
-      width: 48%;
-    }
-
-    &__title {
-      top: 0;
-      font-size: 5.4em;
-      letter-spacing: 0.09em;
-      padding: 0.3em 0;
-
-      &--white {
-        margin-left: 0.04em;
-      }
-    }
-
-    &__productDetails {
-      bottom: 8em;
-
-      &__price {
-        font-size: 2.5em;
-      }
-    }
-
-    &__productLabel {
-      font-size: 6em;
-
-      -webkit-text-stroke: 1px $colorTertiary;
-      -moz-text-stroke: 1px $colorTertiary;
-    }
-  }
-}
-
-/* Estilos para desktops médios */
-@media (min-width: 1281px) and (max-width: 1440px) {
-  .hero {
-    height: 65em;
-
-    &::before {
-      width: 22.2em;
-      top: 0;
-    }
-
-    &__title {
-      top: 0;
-      font-size: 8em;
-      letter-spacing: 0.09em;
-      padding: 0.3em 0;
-
-      &--white {
-        margin-left: 0.07em;
-      }
-    }
-
-    &__productDetails {
-      width: 25em;
-      bottom: 15em;
-
-      &__price {
-        font-size: 2.5em;
-      }
-    }
-
-    &__productLabel {
-      font-size: 9em;
-
-      -webkit-text-stroke: 2px $colorTertiary;
-      -moz-text-stroke: 2px $colorTertiary;
+    &__btn {
+      font-size: 0.8rem;
+      padding: 0.5rem 0.5rem;
+      width: 250px;
     }
   }
 }

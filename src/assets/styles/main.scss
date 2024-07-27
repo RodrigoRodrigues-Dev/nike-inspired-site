@@ -10,14 +10,14 @@ body {
     max-width: 1200px;
     width: 100%;
     margin: auto;
-    color: variaveis.$colorMain;
+    color: variaveis.$color-primary;
 }
 
 .line {
-    margin: 2em 0em;
-    height: 0.20em;
+    margin: 2rem 0rem;
+    height: 0.20rem;
     width: 100%;
-    background-color: #333;
+    background-color: variaveis.$color-dark-gray;
 }
 
 /* Estilo para dispositivos móveis pequenos */

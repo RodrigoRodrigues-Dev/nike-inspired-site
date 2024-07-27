@@ -14,12 +14,12 @@ import { RouterLink } from 'vue-router';
 @import '/src/assets/styles/_variaveis.scss';
 
 .headerMin {
-    background-color: $colorCard;
-    padding: 2em;
-    margin-bottom: 1.25em;
+    background-color: $color-light-background;
+    padding: 2rem;
+    margin-bottom: 1.25rem;
 
     img {
-        width: 6em;
+        width: 10vmin;
     }
 }
 </style>

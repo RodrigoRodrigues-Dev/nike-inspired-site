@@ -1,29 +1,51 @@
 //sources
 $fontPrincipal: "Inter", sans-serif;
 
-//colors
-$colorMain: #151414;
-$colorSecondary: #fff;
-$colorTertiary: #ccc;
-$colorQuaternary: #666;
-$colorCard: #f5f5f5;
-$colorSearch: #ecebeb;
+// Base colors
+$color-primary: #151414; // Main color
+$color-white: #fff; // White
+$color-black: #000; // Black
 
-//colors gradient
-$colorGradientOne: #cf26d3;
-$colorGradientTwo: #f2d06c;
-$colorGradientThree: #f1bb13;
+// Gray tones
+$color-dark-gray: #333; // Dark gray
+$color-gray: #666; // Medium gray
+$color-light-gray: #ccc; // Light gray
+$color-light-gray-2: #e8e8e8; // Lighter gray
+$color-light-background: #f5f5f5; // Light background
+$color-search-background: #ecebeb; // Search background
 
-//mixins
-@mixin btn($fontSize) {
-    background-color: $colorMain;
-    color: $colorSecondary;
+// Teal tones
+$color-teal: #447674; // Dark teal
+$color-soft-teal: #648a87; // Soft teal
+$color-light-teal: #93b9b6; // Light teal
+$color-deep-teal: #243c3a; // Deep teal
+
+// Base button mixin
+@mixin btn($bgColor, $textColor, $fontSize) {
+    background-color: $bgColor;
+    color: $textColor;
     font-weight: 900;
     font-size: $fontSize;
     border: none;
+    transition: background-color 0.3s ease;
 
     &:hover {
         cursor: pointer;
-        background-color: lighten($colorMain, 12%)
+        background-color: lighten($bgColor, 12%);
     }
+}
+
+// Dark button
+@mixin btn-dark($fontSize) {
+    @include btn($color-primary, $color-white, $fontSize);
+}
+
+// Light button
+@mixin btn-light($fontSize) {
+    @include btn($color-white, $color-primary, $fontSize);
+}
+
+// Teal Light button
+@mixin btn-teal-light($fontSize) {
+    @include btn($color-white, $color-deep-teal, $fontSize);
 }

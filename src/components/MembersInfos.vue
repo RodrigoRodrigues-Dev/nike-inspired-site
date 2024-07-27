@@ -12,14 +12,13 @@
 .members-infos {
     display: flex;
     justify-content: center;
-    background-color: $colorMain;
+    background-color: $color-primary;
     width: 100%;
-    padding: 1em 0;
-    color: $colorSecondary;
-    margin-bottom: 1.5em;
+    padding: 1rem 0;
+    color: $color-white;
 
     &__message {
-        font-size: 0.8em;
+        font-size: 0.8rem;
     }
 }
 </style>

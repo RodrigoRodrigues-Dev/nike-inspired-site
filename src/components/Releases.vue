@@ -68,63 +68,64 @@ watch(filters, fetchItems);
 </script>
 
 <template>
-    <div class="releases">
-        <div class="releases-container">
-            <h2 class="releases__title">Lançamentos</h2>
-            <input class="releases__search" placeholder="Buscar..." @input="onChangeSearchInput">
-            <div class="releases__filters">
-                <select class="releases__filters__select" @change="onChangeTypeSelect">
-                    <option value="">Filtrar por</option>
-                    <option value="*Basquete">Basquete</option>
-                    <option value="*Corrida">Corrida</option>
-                    <option value="*Casual">Casual</option>
-                    <option value="*Treino">Treino</option>
-                    <option value="*Academia">Academia</option>
-                </select>
-                <select class="releases__filters__select" @change="onChangeSelect">
-                    <option value="">Ordenar por preço</option>
-                    <option value="price">Menor para o maior</option>
-                    <option value="-price">Maior para o menor</option>
-                </select>
-            </div>
-        </div>
-        <ProductList :items="items" @add-to-cart="onClickAddPlus"/>
+  <div class="releases">
+    <div class="releases-container">
+      <h2 class="releases__title">Lançamentos</h2>
+      <input class="releases__search" placeholder="Buscar..." @input="onChangeSearchInput">
+      <div class="releases__filters">
+        <select class="releases__filters__select" @change="onChangeTypeSelect">
+          <option value="">Filtrar por</option>
+          <option value="*Basquete">Basquete</option>
+          <option value="*Corrida">Corrida</option>
+          <option value="*Casual">Casual</option>
+          <option value="*Treino">Treino</option>
+          <option value="*Academia">Academia</option>
+        </select>
+        <select class="releases__filters__select" @change="onChangeSelect">
+          <option value="">Ordenar por preço</option>
+          <option value="price">Menor para o maior</option>
+          <option value="-price">Maior para o menor</option>
+        </select>
+      </div>
     </div>
+    <ProductList :items="items" @add-to-cart="onClickAddPlus" />
+  </div>
 </template>
 
 <style lang="scss">
 @import '../assets/styles/variaveis.scss';
 
 .releases {
-  margin-bottom: 3.75em;
+  margin: 3.75rem 0;
 
   &-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3em;
+    margin-bottom: 3rem;
   }
 
   &__title {
-    font-size: 2.5em;
+    font-size: 2rem;
     font-weight: 900;
-    margin-right: 0.625em;
+    margin-right: 0.625rem;
   }
 
   &__search {
     width: 100%;
-    padding: 0.5em 1.25em;
-    margin: 0 3.125em;
-    font-size: 1.25em;
-    background-color: $colorSearch;
+    padding: 0.5rem 1.25rem;
+    margin: 0 3.125rem;
+    font-size: 1.25rem;
+    background-color: $color-search-background;
     border: none;
-    border-radius: 1.875em;
+    border-radius: 1.875rem;
 
     &:hover {
-      background-color: darken($colorSearch, 8%);
+      background-color: darken($color-search-background, 8%);
     }
+
     &:focus {
-      background-color: lighten($colorSearch, 8%);
+      background-color: lighten($color-search-background, 8%);
     }
   }
 
@@ -132,11 +133,11 @@ watch(filters, fetchItems);
     display: flex;
 
     &__select {
-      font-size: 1.25em;
+      font-size: 1.25rem;
       font-weight: bold;
       border: none;
       outline: none;
-      padding: 0 0.625em;
+      padding: 0 0.625rem;
       background: transparent;
 
       &:hover {
@@ -147,25 +148,25 @@ watch(filters, fetchItems);
 }
 
 /* Estilos para dispositivos móveis médios e pequenos (telefones em modo paisagem) */
-@media (min-width: 320px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .releases {
-    margin-bottom: 3em;
+    margin-bottom: 3rem;
 
     &-container {
-      margin-bottom: 2.5em;
+      margin-bottom: 2.5rem;
       flex-direction: column;
-      gap: 2em;
+      gap: 2rem;
     }
 
     &__title {
-      font-size: 2em;
-      margin-right: 0.3em;
+      font-size: 1.5rem;
+      margin-right: 0.3rem;
     }
 
     &__search {
       width: 350px;
-      padding: 0.5em 1em;
-      margin: 0 2em;
+      padding: 0.5rem 1rem;
+      margin: 0 2rem;
     }
   }
 }
@@ -174,13 +175,13 @@ watch(filters, fetchItems);
 @media (min-width: 768px) and (max-width: 1024px) {
   .releases {
     &-container {
-      margin-bottom: 2.5em;
+      margin-bottom: 2.5rem;
       flex-direction: column;
-      gap: 2em;
+      gap: 2rem;
     }
 
     &__title {
-      font-size: 2.3em;
+      font-size: 2rem;
     }
 
     &__search {
@@ -193,13 +194,13 @@ watch(filters, fetchItems);
 @media (min-width: 1025px) and (max-width: 1280px) {
   .releases {
     &-container {
-      margin-bottom: 2.5em;
+      margin-bottom: 2.5rem;
       flex-direction: column;
-      gap: 2em;
+      gap: 2rem;
     }
 
     &__title {
-      font-size: 2.5em;
+      font-size: 2rem;
     }
 
     &__search {

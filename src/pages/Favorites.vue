@@ -62,26 +62,26 @@ watch(cart, () => {
 @import '/src/assets/styles/_variaveis.scss';
 
 .favorites {
-  max-width: 100em;
+  max-width: 100rem;
   width: 100%;
   margin: auto;
-  margin-bottom: 7em;
+  margin-bottom: 7rem;
 
   &__title {
-    margin: 1.6em 0;
-    font-size: 2.2em;
+    margin: 1.6rem 0;
+    font-size: 2.2rem;
     font-weight: 900;
   }
 
   &__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3em;
+    gap: 3rem;
   }
 
   &--empty__container {
     margin: auto;
-    max-width: 100em;
+    max-width: 100rem;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -89,16 +89,15 @@ watch(cart, () => {
     align-items: center;
 
     &__btn {
-      @include btn(1em);
-      width: 33em;
-      padding: 0.7em;
-      border-radius: 1em;
-      margin-top: 1.7em;
+      @include btn-dark(1rem);
+      width: 33rem;
+      padding: 0.7rem;
+      margin-top: 1.7rem;
+      border-radius: 1rem;
     }
   }
 }
 
-// Animação de fade para entrada e saída
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -111,10 +110,13 @@ watch(cart, () => {
   opacity: 0;
 }
 
-// Estilos para telas pequenas (mobile)
 @media (min-width: 320px) and (max-width: 767px) {
   .favorites {
     width: 340px;
+
+    &__title {
+      font-size: 1.5rem;
+    }
 
     &__list {
       grid-template-columns: repeat(1, 1fr);
@@ -122,17 +124,18 @@ watch(cart, () => {
 
     &--empty__container {
       h1 {
-        font-size: 1.6em;
+        font-size: 1.6rem;
       }
 
       &__btn {
-        width: 27em;
+        @include btn-dark(1rem);
+        width: 25rem;
+        border-radius: 1rem;      
       }
     }
   }
 }
 
-// Estilos para telas médias (tablets e desktops menores)
 @media (min-width: 768px) and (max-width: 1624px) {
   .favorites {
     &__list {
@@ -141,42 +144,39 @@ watch(cart, () => {
   }
 }
 
-// Estilos específicos para tablets
 @media (min-width: 768px) and (max-width: 1024px) {
   .favorites {
     width: 740px;
 
     &__img {
-      width: 2em;
+      width: 2rem;
     }
 
     &__title {
-      font-size: 1.9em;
+      font-size: 1.9rem;
     }
   }
 }
 
-// Estilos específicos para desktops
 @media (min-width: 1025px) and (max-width: 1624px) {
   .favorites {
     width: 970px;
 
     &__img {
-      width: 2em;
+      width: 2rem;
     }
 
     &__title {
-      font-size: 1.9em;
+      font-size: 1.9rem;
     }
   }
 }
 
-// Estilos compartilhados para containers vazios em telas médias
 @media (min-width: 768px) and (max-width: 1624px) {
   .favorites {
     &--empty__container {
       h1 {
-        font-size: 1.6em;
+        font-size: 1.6rem;
       }
     }
   }

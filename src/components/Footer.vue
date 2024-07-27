@@ -1,15 +1,16 @@
 <template>
     <footer class="footer">
         <div class="footer__container">
-            <div class="footer__container__content">
-                <span> <a href="#">Encontre Uma Loja Nike</a> </span>
-                <span> <a href="#">Cadastre-se para receber novidades</a> </span>
-                <span> <a href="#">Cartão Presente</a> </span>
-                <span> <a href="#">Mapa do Site</a> </span>
-                <span> <a href="#">Nike Journal</a> </span>
+            <div class="footer__section footer__links">
+                <span><a href="#">Encontre Uma Loja Nike</a></span>
+                <span><a href="#">Cadastre-se para receber novidades</a></span>
+                <span><a href="#">Cartão Presente</a></span>
+                <span><a href="#">Mapa do Site</a></span>
+                <span><a href="#">Nike Journal</a></span>
             </div>
-            <div class="footer__container__content">
-                <p class="footer__container__content__title">Ajuda</p>
+            <div class="footer__divider"></div>
+            <div class="footer__section footer__help">
+                <p class="footer__section__title">Ajuda</p>
                 <ul>
                     <li>Dúvidas Gerais</li>
                     <li>Encontre seu Tamanho</li>
@@ -22,8 +23,9 @@
                     <li>Fale Conosco</li>
                 </ul>
             </div>
-            <div class="footer__container__content">
-                <p class="footer__container__content__title">Sobre a Nike</p>
+            <div class="footer__divider"></div>
+            <div class="footer__section footer__about">
+                <p class="footer__section__title">Sobre a Nike</p>
                 <ul>
                     <li>Propósito</li>
                     <li>Sustentabilidade</li>
@@ -31,29 +33,34 @@
                     <li>Sobre o Grupo SBF</li>
                 </ul>
             </div>
-            <div class="footer__container__content">
-                <p class="footer__container__content__title">Redes Sociais</p>
-                <ul>
-                    <li><img class="footer__container__content__img" src="/src/assets/images/icons/Facebook.svg" alt="Ícone Facebook"></li> 
-                    <li><img class="footer__container__content__img" src="/src/assets/images/icons/Instragam.svg" alt="Ícone Instagram"></li> 
-                    <li><img class="footer__container__content__img" src="/src/assets/images/icons/YouTube.svg" alt="Ícone YouTube"></li>
+            <div class="footer__divider"></div>
+            <div class="footer__section footer__social">
+                <p class="footer__section__title">Redes Sociais</p>
+                <ul class="footer__social__icons">
+                    <li><img class="footer__social__icon" src="/src/assets/images/icons/Facebook.svg"
+                            alt="Ícone Facebook"></li>
+                    <li><img class="footer__social__icon" src="/src/assets/images/icons/Instragam.svg"
+                            alt="Ícone Instagram"></li>
+                    <li><img class="footer__social__icon" src="/src/assets/images/icons/YouTube.svg"
+                            alt="Ícone YouTube"></li>
                 </ul>
             </div>
         </div>
         <div class="line"></div>
-        <div class="footer__container">
-            <p class="footer__container__content__title">&copy; 2024 Nike Inc. Todos os direitos reservados.</p>
+        <div class="footer__bottom">
+            <p>&copy; 2024 Nike Inc. Todos os direitos reservados.</p>
         </div>
     </footer>
 </template>
+
 
 <style lang="scss">
 @import '../assets/styles/variaveis.scss';
 
 .footer {
-    background-color: $colorMain;
-    color: $colorSecondary;
-    padding: 2.5em 0;
+    background-color: $color-primary;
+    color: $color-white;
+    padding: 2.5rem 0;
 
     &__container {
         max-width: 1200px;
@@ -62,97 +69,98 @@
         display: flex;
         justify-content: space-between;
 
-        &__content {
+        /* Sections in footer */
+        .footer__section {
             &__title {
-                margin-bottom: 1.3em;
+                margin-bottom: 1.3rem;
             }
 
             span {
                 a {
-                    color: $colorSecondary;
-                    font-size: 1.125em;
-                    margin-bottom: 0.75em;
-                    display: block; /* Transforma os links em blocos para melhor alinhamento */
+                    color: $color-white;
+                    font-size: 1.125rem;
+                    margin-bottom: 0.75rem;
+                    display: block;
                     cursor: pointer;
                 }
             }
 
             li {
-                font-size: 1em;
+                font-size: 1rem;
                 cursor: pointer;
-                margin-bottom: 0.75em;
+                margin-bottom: 0.75rem;
             }
 
-            &:nth-child(4) ul {
+            &__images {
                 display: flex;
-                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            &__img {
+                width: 1.7rem;
             }
         }
     }
 
-    /* Estilos para diferentes tamanhos de dispositivos */
+    &__divider {
+        margin: 1rem 0;
+        height: 0.2rem;
+        width: 100%;
+        background-color: #333;
 
-    /* Dispositivos móveis pequenos */
-    @media (min-width: 320px) and (max-width: 480px) {
-        .footer__container {
-            max-width: 370px;
-
-            &__content {
-                ul,
-                span {
-                    font-size: 0.6em;
-                }
-
-                &__title {
-                    font-size: 0.7em;
-                }
-
-                &__img {
-                    width: 1.7em;
-                }
-            }
+        @media (min-width: 1025px) {
+            display: none;
         }
     }
 
-    /* Dispositivos móveis grandes */
-    @media (min-width: 481px) and (max-width: 767px) {
-        .footer__container {
-            max-width: 460px;
+    &__bottom {
+        text-align: center;
+        padding-top: 1rem;
+    }
 
-            &__content {
-                ul,
-                span {
-                    font-size: 0.6em;
-                }
-
-                &__title {
-                    font-size: 0.7em;
-                }
-
-                &__img {
-                    width: 1.6em;
-                }
-            }
+    &__social {
+        &__icons {
+            display: flex;
+            gap: 1rem;
         }
     }
 
-    /* Tablets */
-    @media (min-width: 768px) and (max-width: 1024px) {
-        .footer__container {
-            max-width: 750px;
+    /* Dispositivos móveis pequenos e grandes */
+    @media (max-width: 1024px) {
+        .footer {
+            &__container {
+                width: 600px;
+                flex-direction: column;
 
-            &__content {
+                @media (max-width: 610px) {
+                    width: 470px;
+                }
+
+                @media (max-width: 480px) {
+                    width: 370px;
+                }
+
+                @media (max-width: 370px) {
+                    width: 320px;
+                }
+            }
+
+            &__section {
                 ul,
                 span {
-                    font-size: 0.7em;
+                    font-size: 0.8rem;
                 }
 
                 &__title {
-                    font-size: 0.9em;
+                    font-size: 1.3rem;
+                }
+
+                &__images {
+                    gap: 1rem;
                 }
 
                 &__img {
-                    width: 1.7em;
+                    width: 1.7rem;
                 }
             }
         }
@@ -163,18 +171,19 @@
         .footer__container {
             max-width: 950px;
 
-            &__content {
+            .footer__section {
+
                 ul,
                 span {
-                    font-size: 0.9em;
+                    font-size: 0.9rem;
                 }
 
                 &__title {
-                    font-size: 0.8em;
+                    font-size: 0.9rem;
                 }
 
                 &__img {
-                    width: 1.7em;
+                    width: 1.7rem;
                 }
             }
         }

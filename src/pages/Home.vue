@@ -2,16 +2,15 @@
 import { ref, inject, watch } from 'vue';
 import Header from '../components/Header.vue';
 import MembersInfos from '@/components/MembersInfos.vue';
+import SubHeader from '@/components/SubHeader.vue';
 import Hero from '@/components/Hero.vue';
 import Releases from '@/components/Releases.vue';
 import Footer from '@/components/Footer.vue';
 import PopupItemAdd from '@/components/PopupItemAdd.vue';
 
-// Injeção do carrinho e definição do estado de exibição do popup
 const { cart } = inject('cart');
 const showPopup = ref(false);
 
-// Observa mudanças no carrinho para exibir o popup
 watch(cart, () => {
   showPopup.value = true;
   setTimeout(() => {
@@ -33,10 +32,11 @@ watch(cart, () => {
         </template>
       </div>
     </transition>
+    <SubHeader />
     <Header />
     <MembersInfos />
+    <Hero />
     <div class="container">
-      <Hero />
       <Releases />
     </div>
     <Footer />

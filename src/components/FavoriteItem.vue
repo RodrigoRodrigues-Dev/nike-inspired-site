@@ -4,6 +4,10 @@ import { inject, ref } from 'vue';
 const fav = inject('fav');
 const cart = inject('cart');
 
+if (!fav || !cart) {
+  console.error('Favoritos ou carrinho não estão injetados corretamente.');
+}
+
 const props = defineProps({
   id: Number,
   type: String,
@@ -16,8 +20,8 @@ const props = defineProps({
 const localIsAdded = ref(props.isAdded);
 
 const parsePrice = (formattedPrice) => {
-  let price = formattedPrice.replace('R$ ', '').replace(',00', '');
-  price = price.replace(/\./g, '').replace(',', '.');
+  let price = formattedPrice.replace('R$ ', '').replace(',', '.');
+  price = price.replace(/\./g, '');
   return parseFloat(price);
 };
 
@@ -58,7 +62,7 @@ const removeFavoriteItem = () => {
 </template>
 
 <style lang="scss">
-@import '/src/assets/styles/_variaveis.scss';
+@import '@/assets/styles/_variaveis.scss';
 
 .favoriteItem {
   position: relative;
@@ -66,63 +70,83 @@ const removeFavoriteItem = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 3em;
-  background-color: $colorCard;
-  padding: 3em;
+  border-radius: 3rem;
+  background-color: $color-light-background;
+  padding: 3rem;
 
   &__remove {
     position: absolute;
-    top: 3em;
-    right: 3em;
-    width: 1em;
+    top: 3rem;
+    right: 3rem;
+    width: 1rem;
     cursor: pointer;
   }
 
   &__img {
-    width: 9em;
-    margin-bottom: 1em;
+    width: 9rem;
+    margin-bottom: 1rem;
   }
 
   &__title {
-    font-size: 1.2em;
+    font-size: 1.2rem;
+
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+    }
   }
 
   &__type {
-    margin: 0.5em 0em;
+    margin: 0.5rem 0rem;
     font-weight: 700;
     color: rgb(112, 112, 112);
   }
 
   &__price {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     font-weight: 900;
   }
 
   &__btn {
-    margin-top: 1em;
-    @include btn(1em);
+    @include btn-dark(1rem);
+    margin-top: 1rem;
     width: 70%;
-    border-radius: 1em;
-    padding: 0.4em;
+    border-radius: 1rem;
+    padding: 0.4rem;
   }
 
-  /* Estilos para tablets */
+  
+  @media (max-width: 767px) {   
+    &__img {
+      width: 8rem;
+    }
+
+    &__type {
+      font-size: 1rem
+    }
+
+    &__btn {
+      @include btn-dark(1rem);
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.7rem;
+    }
+  }
+
   @media (min-width: 768px) and (max-width: 1024px) {
     &__img {
-      width: 7em;
+      width: 7rem;
     }
 
     &__price {
-      font-size: 1.2em;
+      font-size: 1.2rem;
       font-weight: 900;
     }
 
     &__btn {
-      margin-top: 1em;
-      @include btn(0.8em);
-      width: 95%;
-      border-radius: 1em;
-      padding: 0.7em;
+      @include btn-dark(0.8rem);
+      margin-top: 1rem;
+      border-radius: 1rem;
+      padding: 0.7rem;
     }
   }
 }
