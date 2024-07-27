@@ -5,7 +5,7 @@
 Nike Inspired Site é um site de compras inspirado no site da **Nike**. Permite aos usuários adicionar itens ao carrinho e favoritos, oferece filtros de produtos e integração com uma API para listagem e gerenciamento de produtos.
 
 <p align="center">
-  <img src=".github/Preview.png" width="100%" />
+  <img src=".github/preview.png" width="100%" />
 </p>
 
 ## 💻 Visão Geral
