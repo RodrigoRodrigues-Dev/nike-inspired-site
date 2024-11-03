@@ -12,6 +12,8 @@
   "dependencies": {
     "@nuxt/fonts": "^0.10.1",
     "nuxt": "^3.13.2",
+    "nuxt-icon": "^1.0.0-beta.7",
+    "nuxt-icons": "^3.2.1",
     "vue": "latest",
     "vue-router": "latest"
   },

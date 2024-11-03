@@ -1,7 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
+  components: true,
   css: ['~/assets/scss/main.scss'],
 
   vite: {
@@ -14,5 +14,16 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxt/fonts']
+  modules: [
+    'nuxt-icon',
+    '@nuxt/fonts'
+  ],
+
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+    }
+  }
 })

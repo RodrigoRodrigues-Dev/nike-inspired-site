@@ -1,13 +1,9 @@
-<template>
-    <div>
-
-    </div>
-</template>
-
 <script setup>
-
+    import HeaderMin from '~/components/layout/HeaderMin.vue';
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<template>
+    <div>
+        <HeaderMin />
+    </div>
+</template>

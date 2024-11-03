@@ -1,13 +1,15 @@
-<template>
-    <div>
-        <h1>Olá Nuxt</h1>
-    </div>
-</template>
-
-<script setup>
-
+<script setup lang="ts">
+import Header from '~/components/layout/Header.vue';
+import TopBar from '~/components/layout/TopBar.vue';
+import PromoBar from '~/components/promotions/PromoBar.vue';
+import CategoryMenu from '~/components/navigation/CategoryMenu.vue';
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<template>
+    <div>
+        <TopBar />
+        <Header />
+        <CategoryMenu />
+        <PromoBar />
+    </div>
+</template>
